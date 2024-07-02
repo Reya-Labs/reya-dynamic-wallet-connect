@@ -17,7 +17,7 @@ const setCachedPromise = <Result>(
   // Ensure any existing timeout is cleared before setting a new one
   const existingEntry = cache.get(cacheKey);
   if (!isEmpty(existingEntry?.timeoutId)) {
-    clearTimeout(existingEntry.timeoutId);
+    window.clearTimeout(existingEntry.timeoutId);
   }
 
   const timeoutId = window.setTimeout(() => {
