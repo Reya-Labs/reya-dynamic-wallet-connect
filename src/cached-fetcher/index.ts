@@ -1,3 +1,5 @@
+import { isEmpty } from '..';
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const cache = new Map<string, { promise: Promise<any>; timeoutId?: number }>();
 
@@ -16,8 +18,10 @@ const setCachedPromise = <Result>(
 
   // Ensure any existing timeout is cleared before setting a new one
   const existingEntry = cache.get(cacheKey);
-  if (!isEmpty(existingEntry?.timeoutId)) {
-    window.clearTimeout(existingEntry.timeoutId);
+  const existingTimeoutId = existingEntry?.timeoutId;
+
+  if (!isEmpty(existingTimeoutId)) {
+    window.clearTimeout(existingTimeoutId);
   }
 
   const timeoutId = window.setTimeout(() => {
