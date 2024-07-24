@@ -12,6 +12,9 @@ describe('tokenFormatter', () => {
     ['weth', 'wETH'],
     ['usdc.e', 'USDC.e'],
     ['sol', 'SOL'],
+    ['arb', 'ARB'],
+    ['avax', 'AVAX'],
+    ['op', 'OP'],
   ])('given value=%p - should return expected output %p', (value, expected) => {
     // Call the formatter function
     const retValue = tokenFormatter(value as string);

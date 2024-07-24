@@ -1,3 +1,12 @@
+const TOKEN_FORMAT_MAP: Record<string, string> = {
+  reth: 'rETH',
+  rusd: 'rUSD',
+  steth: 'stETH',
+  'usdc.e': 'USDC.e',
+  wbtc: 'wBTC',
+  weth: 'wETH',
+};
+
 /**
  * Formats a token string into a standardized format.
  *
@@ -8,23 +17,9 @@ export const tokenFormatter = (token: string | undefined): string => {
   if (!token) {
     return '';
   }
-  if (token.toLowerCase() === 'rusd') {
-    return 'rUSD';
-  }
-  if (token.toLowerCase() === 'reth') {
-    return 'rETH';
-  }
-  if (token.toLowerCase() === 'steth') {
-    return 'stETH';
-  }
-  if (token.toLowerCase() === 'wbtc') {
-    return 'wBTC';
-  }
-  if (token.toLowerCase() === 'weth') {
-    return 'wETH';
-  }
-  if (token.toLowerCase() === 'usdc.e') {
-    return 'USDC.e';
+  const entry = TOKEN_FORMAT_MAP[token.toLowerCase()];
+  if (entry) {
+    return entry;
   }
   return token.toUpperCase();
 };
