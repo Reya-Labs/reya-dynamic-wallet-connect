@@ -42,19 +42,21 @@ export const cachedFetcher = <Params, Result>({
   key,
   fetcher,
   cacheDuration,
-}: CachedFetcherParams<Params, Result>): ((params: Params) => Promise<Result>) => {
-  return async (params: Params): Promise<Result> => {
+}: CachedFetcherParams<Params, Result>): ((
+  params: Params,
+  forceFetch?: boolean,
+) => Promise<Result>) => {
+  return async (params: Params, forceFetch: boolean = false): Promise<Result> => {
     const cacheKey = typeof key === 'function' ? key(params) : key;
-    const cachedPromise = getCachedPromise<Result>(cacheKey);
-
-    if (cachedPromise) {
-      return await cachedPromise;
+    if (!forceFetch) {
+      const cachedPromise = getCachedPromise<Result>(cacheKey);
+      if (cachedPromise) {
+        return await cachedPromise;
+      }
     }
 
     const promise = fetcher(params);
-
     setCachedPromise(cacheKey, promise, cacheDuration);
-
     return await promise;
   };
 };
