@@ -2,6 +2,7 @@ const TOKEN_FORMAT_MAP: Record<string, string> = {
   reth: 'rETH',
   rusd: 'rUSD',
   steth: 'stETH',
+  susde: 'sUSDe',
   'usdc.e': 'USDC.e',
   wbtc: 'wBTC',
   weth: 'wETH',

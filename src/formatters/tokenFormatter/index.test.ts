@@ -10,6 +10,7 @@ describe('tokenFormatter', () => {
     ['stETH', 'stETH'],
     ['wbtc', 'wBTC'],
     ['weth', 'wETH'],
+    ['susde', 'sUSDe'],
     ['usdc.e', 'USDC.e'],
     ['sol', 'SOL'],
     ['arb', 'ARB'],
