@@ -13,7 +13,7 @@ test('formatTimestampToLocaleDateTimeGmt should handle a different timestamp cor
 });
 
 test('formatTimestampToLocaleDateTimeGmt should handle timestamps in the past correctly', () => {
-  const timestamp = Date.UTC(2000, 0, 1, 0, 0); // January 1, 2000, 00:00 GMT
+  const timestamp = Date.UTC(2000, 0, 1, 0, 0);
   const formattedDate = formatTimestampToLocaleDateTimeGmt(timestamp);
   expect(formattedDate).toBe('Saturday, 1 January 2000 at 00:00 GMT');
 });
