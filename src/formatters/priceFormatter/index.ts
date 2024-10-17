@@ -15,6 +15,7 @@ function roundDown(value: number, precision: number) {
 export type PriceFormatterOptions = {
   defaultValue?: string;
   locale: string;
+  padTrailingZeros?: boolean;
   precision: number;
   useGrouping?: Intl.NumberFormatOptions['useGrouping'];
 };
@@ -31,27 +32,35 @@ export type PriceFormatterOptions = {
  * @returns {string} The formatted price string.
  */
 export function priceFormatter(value: number, options: PriceFormatterOptions): string {
-  const { defaultValue = '---', locale, useGrouping = undefined, precision } = { ...options };
+  const {
+    defaultValue = '---',
+    locale,
+    useGrouping = undefined,
+    precision,
+    padTrailingZeros = false,
+  } = { ...options };
+
   if (isEmpty(value) || typeof value !== 'number' || isNaN(value)) {
     return defaultValue;
   }
+
   if (value === 0) {
     return '0';
   }
 
+  const rounded = roundDown(value, precision);
   const localeFormatter = new Intl.NumberFormat(locale, {
     maximumFractionDigits: precision,
-    minimumFractionDigits: precision,
+    minimumFractionDigits: padTrailingZeros ? precision : 0,
     useGrouping,
   });
-  const rounded = roundDown(value, precision);
+
   let formatted = localeFormatter.format(rounded);
-  while (formatted[formatted.length - 1] === '0') {
+
+  const decimalSeparator = (1.1).toLocaleString(locale).charAt(1);
+  if (formatted.endsWith(decimalSeparator)) {
     formatted = formatted.slice(0, -1);
   }
-  if (isNaN(Number(formatted[formatted.length - 1]))) {
-    // trim the token
-    return formatted.slice(0, -1);
-  }
+
   return formatted;
 }

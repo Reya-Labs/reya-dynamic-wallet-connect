@@ -47,7 +47,7 @@ function _defaultNumberCompactFormatter(value: number, locale: string) {
       ? 3
       : value > 0 && value <= 9
       ? 4
-      : 5;
+      : 6;
   const localeFormatter = new Intl.NumberFormat(locale, {
     maximumFractionDigits,
     minimumFractionDigits: 0,
