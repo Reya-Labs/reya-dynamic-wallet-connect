@@ -15,13 +15,8 @@ export function formatTimestampToLocaleDateTimeGmt(timestamp: number): string {
 
   let formattedDate = new Intl.DateTimeFormat('en-GB', options).format(date);
 
-  // Replace 'UTC' with 'GMT'
   formattedDate = formattedDate.replace('UTC', 'GMT');
-
-  // Insert a comma after the weekday
   formattedDate = formattedDate.replace(/^(\w+)(\s)/, '$1,$2');
-
-  // Handle '24:00' issue by replacing with '00:00'
   formattedDate = formattedDate.replace('24:00', '00:00');
 
   return formattedDate;
