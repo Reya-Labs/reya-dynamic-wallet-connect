@@ -17,7 +17,7 @@ export type DefaultNumberCompactFormatterOptions = {
 };
 
 /**
- * Formats a number into a compact form with appropriate suffixes based on locale.
+ * Formats a number into a compact form with suffixes based on locale.
  *
  * @param {number} value - The number to be formatted.
  * @param {string} locale - The locale for formatting.
