@@ -1,6 +1,8 @@
 const TOKEN_FORMAT_MAP: Record<string, string> = {
+  deusd: 'deUSD',
   reth: 'rETH',
   rusd: 'rUSD',
+  sdeusd: 'sdeUSD',
   steth: 'stETH',
   susde: 'sUSDe',
   'usdc.e': 'USDC.e',
