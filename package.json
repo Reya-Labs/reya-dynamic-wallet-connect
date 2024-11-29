@@ -198,7 +198,9 @@
   },
   "dependencies": {
     "@dynamic-labs/ethereum": "3.8.4",
+    "@dynamic-labs/ethers-v6": "^3.8.4",
     "@dynamic-labs/sdk-react-core": "3.8.4",
-    "@dynamic-labs/wagmi-connector": "3.8.4"
+    "@dynamic-labs/wagmi-connector": "3.8.4",
+    "@reyaxyz/ui-minions": "1.9.0"
   }
 }

@@ -2202,6 +2202,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dynamic-labs/ethers-v6@npm:^3.8.4":
+  version: 3.8.4
+  resolution: "@dynamic-labs/ethers-v6@npm:3.8.4"
+  dependencies:
+    "@dynamic-labs/assert-package-version": "npm:3.8.4"
+    "@dynamic-labs/ethereum-core": "npm:3.8.4"
+    "@dynamic-labs/wallet-connector-core": "npm:3.8.4"
+  peerDependencies:
+    ethers: ^6
+    viem: ^2.7.6
+  checksum: 10c0/6258d6412f1a95c7067a02c12c0ab31b8217e0980a23932a152b76da4e4338cc399502e9dbd3b083fc4a9042a74d95b302147534f362288993191bfe3da725a4
+  languageName: node
+  linkType: hard
+
 "@dynamic-labs/iconic@npm:3.8.4":
   version: 3.8.4
   resolution: "@dynamic-labs/iconic@npm:3.8.4"
@@ -4997,10 +5011,12 @@ __metadata:
     "@commitlint/cli": "npm:13.2.1"
     "@commitlint/config-conventional": "npm:13.2.0"
     "@dynamic-labs/ethereum": "npm:3.8.4"
+    "@dynamic-labs/ethers-v6": "npm:^3.8.4"
     "@dynamic-labs/sdk-react-core": "npm:3.8.4"
     "@dynamic-labs/wagmi-connector": "npm:3.8.4"
     "@emotion/react": "npm:11.7.1"
     "@emotion/styled": "npm:11.6.0"
+    "@reyaxyz/ui-minions": "npm:^1.9.0"
     "@rollup/plugin-alias": "npm:5.1.0"
     "@rollup/plugin-commonjs": "npm:24.0.1"
     "@rollup/plugin-node-resolve": "npm:15.0.1"
@@ -5054,6 +5070,20 @@ __metadata:
     wagmi: "npm:2.13.2"
   languageName: unknown
   linkType: soft
+
+"@reyaxyz/ui-minions@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "@reyaxyz/ui-minions@npm:1.9.0"
+  peerDependencies:
+    "@tanstack/react-query": 5.17.19 || 5.37.1
+    ethers: 6.10.0
+    react: 18.2.0
+    react-dom: 18.2.0
+    viem: 2.10.9
+    wagmi: 2.9.2
+  checksum: 10c0/00e30bb1d7fbbfc0141bf931122cfdb36a2829b0ed6fec77c3ae79b030c210660335ba0bc7eb6f4454a06fbec411b866952979651bd09f60b6e7fb380679a654
+  languageName: node
+  linkType: hard
 
 "@rnx-kit/chromium-edge-launcher@npm:^1.0.0":
   version: 1.0.0
